@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% if products %}
+        <div class="container mt-4" style="display: grid; grid-template-columns: repeat(4, 1fr)">
+            {% for pr in products %}
+                <div class="card mb-5" style="width: 18rem; height: 10rem;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ pr.title }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ pr.short_description }}</h6>
+                                                <p class="card-text">{{ pr.price }} ron</p>
+                        <span class="mt-auto">
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div>
+            <p>No products available</p>
+        </div>
+    {% endif %}
+{% endblock %}
