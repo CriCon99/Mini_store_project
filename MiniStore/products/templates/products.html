@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'main.html' %}
 {% block content %}
     {% if products %}
         <div class="container mt-4" style="display: grid; grid-template-columns: repeat(4, 1fr)">
@@ -9,8 +9,8 @@
                         <h6 class="card-subtitle mb-2 text-muted">{{ pr.short_description }}</h6>
                                                 <p class="card-text">{{ pr.price }} ron</p>
                         <span class="mt-auto">
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
+                            <a href="{% url 'products:product' pr.id %}" class="card-link">See more</a>
+                            <a href="{% url 'orders:add_to_cart' pr.id %}" class="card-link">Add to cart</a>
                         </span>
                     </div>
                 </div>
@@ -21,4 +21,10 @@
             <p>No products available</p>
         </div>
     {% endif %}
+{% if perms.products.add_product %}
+        <div>
+            <button class="btn btn-primary" onclick="location.href = '{% url "products:add_product" %}'">Add product
+            </button>
+        </div>
+{% endif %}
 {% endblock %}
