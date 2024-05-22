@@ -1,7 +1,9 @@
+# MiniStore
+## 1. Description
 Built with Django, my mini-store offers a curated selection of products. It's a simple, yet efficient way for customers to browse, add items to their cart, and securely checkout.
-
+## 2. Screenshot homepage
 ![img.png](img.png)\
-Technologies & Tools Used\
+## 3. Technologies & Tools Used
 Python: programming language\
 Django: framework\
 PyCharm: IDE (Integrated Development Environment)\
@@ -13,7 +15,7 @@ using the command pip install.\
 After that you may run the server from the same terminal using 'python manage.py runserver'
 
 
-Instructions for installing and running the project
+## 4. Instructions for installing and running the project
 
 Clone this repository locally in the desired folder:\
 git clone https://github.com/CriCon99/Mini_store_project.git
@@ -32,3 +34,4 @@ pip install -r requirements.txt
 
 Running the application will be done using the command:\
 python manage.py runserver
+

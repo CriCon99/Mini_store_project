@@ -23,8 +23,9 @@ def add_to_cart(request, product_id):
     return redirect('products:products')
 
 
+
 class CartView(TemplateView):
-    template_name = 'cart.html'
+    template_name = 'orders/cart.html'
 
     def get_context_data(self, **kwargs):
         current_order = Order.get_current_order(self.request.user)
